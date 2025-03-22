@@ -503,6 +503,7 @@ h2 {
 
 :root[data-theme="light"] .editor-tab {
     color: #666;
+    background: var(--editor-tab);
 }
 
 :root[data-theme="light"] .editor-tab.active {
@@ -510,18 +511,86 @@ h2 {
     color: #fff;
 }
 
-:root[data-theme="light"] .copy-button {
-    background: rgba(0, 0, 0, 0.05);
-    color: #666;
+:root[data-theme="light"] .editor-content {
+    background: var(--editor-bg);
 }
 
-:root[data-theme="light"] .copy-button:hover {
-    background: rgba(0, 0, 0, 0.1);
-    color: #000;
+:root[data-theme="light"] .editor-content pre {
+    background: var(--editor-bg);
 }
 
 :root[data-theme="light"] .editor-content code {
     color: #333;
+}
+
+/* Стили для скроллбара в светлой теме */
+:root[data-theme="light"] .editor-content pre::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+:root[data-theme="light"] .editor-content pre::-webkit-scrollbar-track {
+    background: #f0f0f0;
+}
+
+:root[data-theme="light"] .editor-content pre::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+:root[data-theme="light"] .editor-content pre::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}
+
+/* Стили для подсветки синтаксиса в светлой теме */
+:root[data-theme="light"] .editor-content .token.comment,
+:root[data-theme="light"] .editor-content .token.prolog,
+:root[data-theme="light"] .editor-content .token.doctype,
+:root[data-theme="light"] .editor-content .token.cdata {
+    color: #666;
+}
+
+:root[data-theme="light"] .editor-content .token.punctuation {
+    color: #444;
+}
+
+:root[data-theme="light"] .editor-content .token.property,
+:root[data-theme="light"] .editor-content .token.tag,
+:root[data-theme="light"] .editor-content .token.boolean,
+:root[data-theme="light"] .editor-content .token.number,
+:root[data-theme="light"] .editor-content .token.constant,
+:root[data-theme="light"] .editor-content .token.symbol {
+    color: #905;
+}
+
+:root[data-theme="light"] .editor-content .token.selector,
+:root[data-theme="light"] .editor-content .token.attr-name,
+:root[data-theme="light"] .editor-content .token.string,
+:root[data-theme="light"] .editor-content .token.char,
+:root[data-theme="light"] .editor-content .token.builtin {
+    color: #007a00;
+}
+
+:root[data-theme="light"] .editor-content .token.operator,
+:root[data-theme="light"] .editor-content .token.entity,
+:root[data-theme="light"] .editor-content .token.url,
+:root[data-theme="light"] .editor-content .language-css .token.string,
+:root[data-theme="light"] .editor-content .style .token.string {
+    color: #0086b3;
+}
+
+:root[data-theme="light"] .editor-content .token.atrule,
+:root[data-theme="light"] .editor-content .token.attr-value,
+:root[data-theme="light"] .editor-content .token.keyword {
+    color: #00a;
+}
+
+:root[data-theme="light"] .editor-content .token.function {
+    color: #c04;
+}
+
+:root[data-theme="light"] .editor-content .token.important {
+    color: #e90;
 }
 
 /* Кнопка копирования */
