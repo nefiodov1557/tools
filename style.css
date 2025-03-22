@@ -124,15 +124,83 @@ body {
 /* Медиа-запрос для мобильной версии шапки */
 @media (max-width: 768px) {
     .header-container {
-        padding: 0.5rem 1rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    .logo i {
+        font-size: 1.5rem;
+    }
+
+    .switch {
+        --switch-width: 70px;
+        --switch-height: 35px;
+        --led-size: 6px;
+        margin-left: auto;
+    }
+
+    .switch input[type="checkbox"] {
+        font-size: 0.75em;
+    }
+
+    .theme-toggle {
+        width: 35px;
+        height: 35px;
+    }
+
+    .theme-toggle i {
+        font-size: 1rem;
     }
 
     .main-nav {
         display: none;
     }
 
-    .logo span {
-        display: none;
+    .section {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .example-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .form-demo {
+        padding: 1rem;
+    }
+
+    .live-editor {
+        height: auto;
+        min-height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-container {
+        padding: 0.5rem;
+    }
+
+    .switch {
+        --switch-width: 60px;
+        --switch-height: 30px;
+    }
+
+    .theme-toggle {
+        width: 30px;
+        height: 30px;
+    }
+
+    .section {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .form-demo {
+        padding: 0.75rem;
     }
 }
 
@@ -203,164 +271,164 @@ h2 {
 
 /* Стили формы авторизации */
 @property --a {
-    syntax: "<angle>";
-    inherits: false;
-    initial-value: 0deg;
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
 }
 
 .box {
-    position: relative;
-    width: 400px;
-    height: 200px;
-    background: repeating-conic-gradient(
-        from var(--a),
-        #ff2770 0%,
-        #ff2770 5%,
-        transparent 5%,
-        transparent 40%,
-        #ff2770 50%
-    );
-    filter: drop-shadow(0 15px 50px #000);
-    animation: rotating 4s linear infinite;
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.5s;
+  position: relative;
+  width: 400px;
+  height: 200px;
+  background: repeating-conic-gradient(
+    from var(--a),
+    #ff2770 0%,
+    #ff2770 5%,
+    transparent 5%,
+    transparent 40%,
+    #ff2770 50%
+  );
+  filter: drop-shadow(0 15px 50px #000);
+  animation: rotating 4s linear infinite;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
 }
 
 .box:hover {
-    width: 450px;
-    height: 500px;
+  width: 450px;
+  height: 500px;
 }
 
 @keyframes rotating {
-    0% {
-        --a: 0deg;
-    }
-    100% {
-        --a: 360deg;
-    }
+  0% {
+    --a: 0deg;
+  }
+  100% {
+    --a: 360deg;
+  }
 }
 
 .box::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: repeating-conic-gradient(
-        from var(--a),
-        #45f3ff 0%,
-        #45f3ff 5%,
-        transparent 5%,
-        transparent 40%,
-        #45f3ff 50%
-    );
-    filter: drop-shadow(0 15px 50px #000);
-    border-radius: 20px;
-    animation: rotating 4s linear infinite;
-    animation-delay: -1s;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: repeating-conic-gradient(
+    from var(--a),
+    #45f3ff 0%,
+    #45f3ff 5%,
+    transparent 5%,
+    transparent 40%,
+    #45f3ff 50%
+  );
+  filter: drop-shadow(0 15px 50px #000);
+  border-radius: 20px;
+  animation: rotating 4s linear infinite;
+  animation-delay: -1s;
 }
 
 .box::after {
-    content: "";
-    position: absolute;
-    inset: 4px;
-    background: #2d2d39;
-    border-radius: 15px;
-    border: 8px solid #25252b;
+  content: "";
+  position: absolute;
+  inset: 4px;
+  background: #2d2d39;
+  border-radius: 15px;
+  border: 8px solid #25252b;
 }
 
 .login {
-    position: absolute;
-    inset: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    flex-direction: column;
-    background: rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    box-shadow: inset 0 10px 20px rgba(0, 0, 0, 0.5);
-    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
-    transition: 0.5s;
-    color: #fff;
-    overflow: hidden;
+  position: absolute;
+  inset: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  box-shadow: inset 0 10px 20px rgba(0, 0, 0, 0.5);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  transition: 0.5s;
+  color: #fff;
+  overflow: hidden;
 }
 
 .box:hover .login {
-    inset: 40px;
+  inset: 40px;
 }
 
 .loginBx {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    transform: translateY(126px);
-    gap: 20px;
-    width: 70%;
-    transition: 0.5s;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transform: translateY(126px);
+  gap: 20px;
+  width: 70%;
+  transition: 0.5s;
 }
 
 .box:hover .loginBx {
-    transform: translateY(0px);
+  transform: translateY(0px);
 }
 
 .loginBx h2 {
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 600;
 }
 
 .loginBx h2 i {
-    color: #ff2770;
-    text-shadow: 0 0 5px #ff2770, 0 0 30px #ff2770;
+  color: #ff2770;
+  text-shadow: 0 0 5px #ff2770, 0 0 30px #ff2770;
 }
 
 .loginBx input {
-    width: 100%;
-    padding: 10px 20px;
-    outline: none;
-    font-size: 1em;
-    color: #fff;
-    background: rgba(0, 0, 0, 0.1);
-    border: 2px solid #fff;
-    border-radius: 30px;
+  width: 100%;
+  padding: 10px 20px;
+  outline: none;
+  font-size: 1em;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.1);
+  border: 2px solid #fff;
+  border-radius: 30px;
 }
 
 .loginBx input::placeholder {
-    color: #999;
+  color: #999;
 }
 
 .loginBx input[type="submit"] {
-    background: #45f3ff;
-    border: none;
-    font-weight: 500;
-    color: #111;
-    cursor: pointer;
-    transition: 0.5s;
+  background: #45f3ff;
+  border: none;
+  font-weight: 500;
+  color: #111;
+  cursor: pointer;
+  transition: 0.5s;
 }
 
 .loginBx input[type="submit"]:hover {
-    box-shadow: 0 0 10px #45f3ff, 0 0 60px #45f3ff;
+  box-shadow: 0 0 10px #45f3ff, 0 0 60px #45f3ff;
 }
 
 .group {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .group a {
-    color: #fff;
-    text-decoration: none;
+  color: #fff;
+  text-decoration: none;
 }
 
 .group a:nth-child(2) {
-    color: #ff2770;
-    font-weight: 600;
+  color: #ff2770;
+  font-weight: 600;
 }
 
 /* Редактор кода */
@@ -419,6 +487,41 @@ h2 {
     font-size: 14px;
     line-height: 1.5;
     tab-size: 2;
+    color: var(--text);
+}
+
+/* Стили для светлой темы редактора */
+:root[data-theme="light"] .live-editor {
+    background: var(--editor-bg);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+:root[data-theme="light"] .editor-tabs {
+    background: var(--editor-tab);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+:root[data-theme="light"] .editor-tab {
+    color: #666;
+}
+
+:root[data-theme="light"] .editor-tab.active {
+    background: var(--primary);
+    color: #fff;
+}
+
+:root[data-theme="light"] .copy-button {
+    background: rgba(0, 0, 0, 0.05);
+    color: #666;
+}
+
+:root[data-theme="light"] .copy-button:hover {
+    background: rgba(0, 0, 0, 0.1);
+    color: #000;
+}
+
+:root[data-theme="light"] .editor-content code {
+    color: #333;
 }
 
 /* Кнопка копирования */
@@ -506,7 +609,8 @@ h2 {
     }
 
     .live-editor {
-        height: 400px;
+        height: auto;
+        min-height: 400px;
     }
 
     .editor-tabs {
@@ -599,6 +703,14 @@ h2 {
         padding: 1rem;
         margin-bottom: 1rem;
     }
+
+    .editor-content {
+        font-size: 13px;
+    }
+
+    .editor-content pre {
+        padding: 12px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -635,6 +747,26 @@ h2 {
     .box,
     .box:hover {
         max-width: 300px;
+    }
+
+    .editor-tabs {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .tabs-group {
+        width: 100%;
+    }
+
+    .editor-tab {
+        flex: 1;
+        text-align: center;
+        padding: 8px;
+    }
+
+    .copy-button {
+        width: 100%;
+        justify-content: center;
     }
 }
 
@@ -930,24 +1062,30 @@ h2 {
     gap: var(--toggle-gap);
     transition: left var(--switch-duration) ease-in-out,
                 background-color var(--switch-duration) ease-in-out;
+    color: #fff;
+    font-size: 0.85em;
+    font-weight: 500;
 }
 
 .switch input[type="checkbox"]::before,
 .switch input[type="checkbox"]::after {
     position: relative;
-    color: var(--text);
+    color: #fff;
     transition: scale var(--switch-duration);
-    font-size: 0.7em;
+    font-size: 0.85em;
+    font-weight: 500;
 }
 
 .switch input[type="checkbox"]::before {
     content: attr(data-on);
     scale: var(--label-scale-on, 0.75);
+    opacity: var(--label-opacity-on, 0);
 }
 
 .switch input[type="checkbox"]::after {
     content: attr(data-off);
     scale: var(--label-scale-off, 1);
+    opacity: var(--label-opacity-off, 1);
 }
 
 .switch > .led {
@@ -989,6 +1127,8 @@ h2 {
     --icon-delay: 250ms;
     --label-scale-off: 0.75;
     --label-scale-on: 1;
+    --label-opacity-off: 0;
+    --label-opacity-on: 1;
 }
 
 @keyframes toggle {
@@ -1008,4 +1148,255 @@ footer {
   text-align: center;
   padding: 2rem 0;
   color: #777;
+}
+
+/* ==================== СЕКЦИЯ 2: ТРЕТЬЯ ФОРМА АВТОРИЗАЦИИ ==================== */
+/* Стили для третьей формы */
+.login-2-container {
+    --form-width: 450px;
+    --form-height: 500px;
+    --login-box-color: rgba(20, 20, 20, 0.95);
+    --input-color: rgba(40, 40, 40, 0.8);
+    --button-color: #2d2d2d;
+    --footer-color: rgba(255, 255, 255, 0.5);
+    position: relative;
+    width: var(--form-width);
+    height: var(--form-height);
+    background: var(--login-box-color);
+    border-radius: 24px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2),
+                0 8px 16px rgba(0, 0, 0, 0.2),
+                0 0 8px rgba(255, 255, 255, 0.1),
+                0 0 16px rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+    animation: formAppear 0.5s ease-out;
+}
+
+.login-2-container::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    background: radial-gradient(circle at 50% 50%, 
+        rgba(255, 255, 255, 0.8) 0%,
+        rgba(255, 255, 255, 0.6) 20%,
+        rgba(255, 255, 255, 0.4) 40%,
+        rgba(255, 255, 255, 0.2) 60%,
+        transparent 70%);
+    border-radius: 24px;
+    opacity: 0.15;
+    filter: blur(20px);
+    z-index: 1;
+}
+
+.login-2-container::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--login-box-color);
+    border-radius: 24px;
+    box-shadow: inset 0 0 50px rgba(255, 255, 255, 0.1);
+    z-index: 2;
+}
+
+.login-2-login-box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+    z-index: 3;
+    background: rgba(20, 20, 20, 0.5);
+    border-radius: 24px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: inset 0 40px 60px -8px rgba(255, 255, 255, 0.12),
+                inset 4px 0 12px -6px rgba(255, 255, 255, 0.12),
+                inset 0 0 12px -4px rgba(255, 255, 255, 0.12);
+}
+
+.login-2-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+    height: 100%;
+}
+
+.login-2-logo {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    position: relative;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+}
+
+.login-2-logo::before {
+    content: "";
+    position: absolute;
+    inset: -20px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 48 48"><path fill="rgba(255,255,255,0.8)" d="M 24 4 C 18.494917 4 14 8.494921 14 14 C 14 19.505079 18.494917 24 24 24 C 29.505083 24 34 19.505079 34 14 C 34 8.494921 29.505083 4 24 4 z M 24 7 C 27.883764 7 31 10.116238 31 14 C 31 17.883762 27.883764 21 24 21 C 20.116236 21 17 17.883762 17 14 C 17 10.116238 20.116236 7 24 7 z M 11.978516 28 C 9.7987044 28 8 29.798705 8 31.978516 L 8 33.5 C 8 37.104167 10.27927 39.892227 13.306641 41.5625 C 16.334011 43.232773 20.168103 44 24 44 C 27.831897 44 31.665989 43.232773 34.693359 41.5625 C 37.274641 40.138345 39.217335 37.862616 39.761719 35 L 40.001953 35 L 40.001953 31.978516 C 40.001953 29.798705 38.201295 28 36.021484 28 L 11.978516 28 z M 11.978516 31 L 36.021484 31 C 36.579674 31 37.001953 31.420326 37.001953 31.978516 L 37.001953 32 L 37 32 L 37 33.5 C 37 35.895833 35.65427 37.607773 33.244141 38.9375 C 30.834011 40.267227 27.418103 41 24 41 C 20.581897 41 17.165989 40.267227 14.755859 38.9375 C 12.34573 37.607773 11 35.895833 11 33.5 L 11 31.978516 C 11 31.420326 11.420326 31 11.978516 31 z"></path></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.login-2-logo::after {
+    display: none;
+}
+
+.login-2-header {
+    font-size: 28px;
+    color: white;
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.login-2-input {
+    width: 100%;
+    height: 45px;
+    background: var(--input-color);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 0 15px;
+    color: white;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.login-2-input:focus {
+    border: 1px solid #fff;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+}
+
+.login-2-input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.login-2-button {
+    width: 100%;
+    height: 45px;
+    border: none;
+    border-radius: 20px;
+    background: var(--button-color);
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: inset 0px 3px 6px -4px rgba(255, 255, 255, 0.6),
+                inset 0px -3px 6px -2px rgba(0, 0, 0, 0.8);
+}
+
+.login-2-button:hover {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: inset 0px 3px 6px rgba(255, 255, 255, 0.6),
+                inset 0px -3px 6px rgba(0, 0, 0, 0.8),
+                0px 0px 8px rgba(255, 255, 255, 0.05);
+}
+
+.login-2-google-sign-in {
+    background: #4285f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.login-2-google-sign-in:hover {
+    background: #3b78e7;
+}
+
+.login-2-footer {
+    text-align: left;
+    color: var(--footer-color);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.login-2-link {
+    position: relative;
+    color: var(--footer-color);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.login-2-link:hover {
+    color: #fff;
+}
+
+.login-2-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    border-radius: 6px;
+    height: 1px;
+    background: currentColor;
+    transition: width 0.3s ease;
+}
+
+.login-2-link:hover::after {
+    width: 100%;
+}
+
+/* Медиа-запросы для третьей формы */
+@media (max-width: 768px) {
+    .login-2-container {
+        --form-width: 350px;
+        --form-height: 480px;
+    }
+
+    .login-2-login-box {
+        padding: 30px;
+    }
+
+    .login-2-logo {
+        width: 70px;
+        height: 70px;
+    }
+
+    .login-2-header {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-2-container {
+        --form-width: 320px;
+        --form-height: 460px;
+    }
+
+    .login-2-login-box {
+        padding: 25px;
+    }
+
+    .login-2-logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .login-2-form {
+        gap: 20px;
+    }
+}
+
+@media (max-height: 600px) and (orientation: landscape) {
+    .login-2-container {
+        --form-height: 440px;
+    }
+
+    .login-2-form {
+        gap: 15px;
+    }
 }
