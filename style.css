@@ -1,9 +1,24 @@
 /* ==================== ГЛОБАЛЬНЫЕ СТИЛИ ==================== */
 :root {
+    /* Темная тема (по умолчанию) */
     --primary: #7c4dff;
     --dark: #0a0a0a;
     --dark-gray: #1a1a1a;
     --text: #e0e0e0;
+    --section-bg: #1a1a1a;
+    --editor-bg: #151515;
+    --editor-tab: #1e1e1e;
+}
+
+:root[data-theme="light"] {
+    /* Светлая тема */
+    --primary: #6200ea;
+    --dark: #f5f5f5;
+    --dark-gray: #ffffff;
+    --text: #2c2c2c;
+    --section-bg: #ffffff;
+    --editor-bg: #f8f8f8;
+    --editor-tab: #e8e8e8;
 }
 
 * {
@@ -17,12 +32,108 @@ body {
     background: var(--dark);
     color: var(--text);
     line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
+}
+
+/* ==================== ГЛАВНАЯ ШАПКА ==================== */
+.main-header {
+    background: var(--section-bg);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.logo i {
+    font-size: 1.8rem;
+}
+
+.main-nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    color: var(--text);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-link.active {
+    background: var(--primary);
+    color: #fff;
+}
+
+.theme-toggle {
+    cursor: pointer;
+    padding: 0.8rem;
+    border-radius: 50%;
+    transition: 0.3s;
+    color: var(--text);
+    background: rgba(128, 128, 128, 0.1);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle:hover {
+    background: rgba(128, 128, 128, 0.2);
+    transform: scale(1.1);
+}
+
+.theme-toggle i {
+    font-size: 1.2rem;
+    transition: transform 0.5s;
+}
+
+:root[data-theme="light"] .theme-toggle i {
+    transform: rotate(360deg);
+}
+
+/* Медиа-запрос для мобильной версии шапки */
+@media (max-width: 768px) {
+    .header-container {
+        padding: 0.5rem 1rem;
+    }
+
+    .main-nav {
+        display: none;
+    }
+
+    .logo span {
+        display: none;
+    }
 }
 
 /* ==================== ШАПКА ==================== */
@@ -37,7 +148,7 @@ body {
 /* ==================== СЕКЦИИ ==================== */
 /* Общие стили для секций */
 .section {
-    background: var(--dark-gray);
+    background: var(--section-bg);
     padding: 2rem;
     margin-bottom: 2rem;
     border-radius: 10px;
@@ -254,7 +365,7 @@ h2 {
 
 /* Редактор кода */
 .live-editor {
-    background: #151515;
+    background: var(--editor-bg);
     border-radius: 8px;
     overflow: hidden;
     height: 550px;
@@ -265,7 +376,7 @@ h2 {
     gap: 8px;
     padding: 15px;
     justify-content: space-between;
-    background: #151515;
+    background: var(--editor-tab);
     align-items: center;
 }
 
@@ -276,7 +387,7 @@ h2 {
 
 .editor-tab {
     padding: 6px 16px;
-    background: #1e1e1e;
+    background: var(--editor-tab);
     border: none;
     color: #888;
     cursor: pointer;
@@ -361,8 +472,211 @@ h2 {
 
 /* ==================== МЕДИА ЗАПРОСЫ ==================== */
 @media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .header-container {
+        padding: 0.5rem 1rem;
+    }
+
+    .logo span {
+        display: none;
+    }
+
+    .switch {
+        --switch-width: 60px;
+        --switch-height: 30px;
+        --led-size: 6px;
+    }
+
+    .switch > .icon {
+        display: none;
+    }
+
     .example-grid {
         grid-template-columns: 1fr;
+        gap: 10px;
+        min-height: auto;
+    }
+
+    .form-demo {
+        min-height: auto;
+        padding: 10px;
+    }
+
+    .live-editor {
+        height: 400px;
+    }
+
+    .editor-tabs {
+        padding: 10px;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .tabs-group {
+        width: 100%;
+        justify-content: stretch;
+    }
+
+    .editor-tab {
+        flex: 1;
+        text-align: center;
+    }
+
+    .copy-button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Стили для первой формы на мобильных */
+    .box {
+        width: 100%;
+        max-width: 350px;
+        height: 180px;
+    }
+
+    .box:hover {
+        width: 100%;
+        max-width: 350px;
+        height: 450px;
+    }
+
+    .loginBx {
+        width: 90%;
+    }
+
+    .loginBx h2 {
+        font-size: 1.2em;
+    }
+
+    /* Стили для второй формы на мобильных */
+    .login-1_wrapper {
+        min-height: 400px;
+    }
+
+    .login-1_box,
+    .login_box {
+        width: 100%;
+        max-width: 350px;
+        padding: 6em 1.5em 3em 1.5em;
+    }
+
+    .login-1_header,
+    .login-header {
+        width: 120px;
+        height: 60px;
+    }
+
+    .login-1_input-field,
+    .input-field {
+        height: 50px;
+        font-size: 14px;
+        padding-inline: 15px 40px;
+    }
+
+    .login-1_icon,
+    .icon {
+        font-size: 18px;
+        right: 15px;
+    }
+
+    .login-1_remember-forgot,
+    .remember-forgot {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+
+    .login-1_input-submit,
+    .input-submit {
+        height: 45px;
+        font-size: 15px;
+    }
+
+    .section {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0.5rem;
+    }
+
+    .section {
+        padding: 0.75rem;
+        border-radius: 8px;
+    }
+
+    .editor-content {
+        font-size: 12px;
+    }
+
+    .editor-content pre {
+        padding: 10px;
+    }
+
+    .login-1_box,
+    .login_box {
+        padding: 6em 1em 3em 1em;
+    }
+
+    .copy-button span {
+        display: none;
+    }
+
+    .copy-button i {
+        margin: 0;
+    }
+
+    .box,
+    .box:hover {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 360px) {
+    .editor-content {
+        font-size: 11px;
+    }
+
+    .editor-content pre {
+        padding: 8px;
+    }
+
+    .login-1_header span,
+    .login-header span {
+        font-size: 24px;
+    }
+
+    .box,
+    .box:hover {
+        max-width: 280px;
+    }
+}
+
+/* Исправление для ландшафтной ориентации */
+@media (max-height: 600px) and (orientation: landscape) {
+    .form-demo {
+        padding: 5px;
+    }
+
+    .box,
+    .login-1_box,
+    .login_box {
+        transform: scale(0.85);
+        transform-origin: center;
+    }
+
+    .section {
+        padding: 0.5rem;
+    }
+
+    .login-1_wrapper {
+        min-height: 350px;
     }
 }
 
@@ -536,9 +850,162 @@ h2 {
 
 /* ==================== МЕДИА ЗАПРОСЫ ==================== */
 
+/* Стили для переключателя темы */
+.switch {
+    --switch-width: 80px;
+    --switch-height: calc(var(--switch-width) / 2);
+    --switch-border-radius: 999vw;
+    --switch-clr-border: rgba(255, 255, 255, 0.25);
+    --switch-clr-bg: var(--dark);
+    --switch-clr-bg-on: var(--primary);
+    --switch-inset: 2px;
+    --switch-duration: 300ms;
 
+    --toggle-size: calc(var(--switch-height) - var(--switch-inset) * 3);
+    --toggle-gap: calc(var(--toggle-size) * 1.5);
+    --toggle-bg: #404040;
+    --toggle-bg-on: #F3F4F6;
 
+    --led-size: 8px;
+    --led-color-off: rgba(255, 255, 255, 0.15);
+    --led-color-on: var(--primary);
+    --led-color-loading: #fbbf24;
+    --led-duration: 1s;
+    --led-delay: 200ms;
+    --led-blur: 12px;
+    --led-blur-distance: -0.5rem;
 
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: fit-content;
+}
 
+.switch label {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    width: var(--switch-width);
+    height: var(--switch-height);
+    border-radius: var(--switch-border-radius);
+    border: 1px solid var(--switch-clr-border);
+    outline: 1px dashed transparent;
+    outline-offset: 4px;
+    background-color: var(--switch-clr-bg);
+    isolation: isolate;
+    transition: background-color var(--switch-duration) ease-in-out var(--switch-delay, 0ms);
+}
 
+.switch > .icon {
+    display: grid;
+    grid-template-areas: "stack";
+}
 
+.switch > .icon > svg {
+    grid-area: stack;
+    scale: var(--icon-on, 0);
+    transition: scale 150ms ease-in-out var(--icon-delay, 0ms);
+    color: var(--text);
+}
+
+.switch > .icon > svg:last-of-type {
+    scale: var(--icon-off, 1);
+}
+
+.switch input[type="checkbox"] {
+    position: absolute;
+    pointer-events: none;
+    appearance: none;
+    border: none;
+    outline: none;
+    border-radius: inherit;
+    background-color: var(--toggle-bg);
+    top: var(--switch-inset);
+    left: var(--toggle-x, var(--switch-inset));
+    width: var(--toggle-size);
+    height: var(--toggle-size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--toggle-gap);
+    transition: left var(--switch-duration) ease-in-out,
+                background-color var(--switch-duration) ease-in-out;
+}
+
+.switch input[type="checkbox"]::before,
+.switch input[type="checkbox"]::after {
+    position: relative;
+    color: var(--text);
+    transition: scale var(--switch-duration);
+    font-size: 0.7em;
+}
+
+.switch input[type="checkbox"]::before {
+    content: attr(data-on);
+    scale: var(--label-scale-on, 0.75);
+}
+
+.switch input[type="checkbox"]::after {
+    content: attr(data-off);
+    scale: var(--label-scale-off, 1);
+}
+
+.switch > .led {
+    position: relative;
+    width: var(--led-size);
+    height: var(--led-size);
+    display: block;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    background-color: var(--led-color-off);
+    transition: background-color 50ms;
+    animation: var(--led-animation, "");
+}
+
+.switch > .led:before {
+    content: '';
+    position: absolute;
+    inset: var(--led-blur-distance);
+    z-index: -1;
+    border-radius: inherit;
+    filter: blur(var(--led-blur));
+    opacity: 0.75;
+    animation: var(--led-animation, "");
+}
+
+.switch:has(input[type="checkbox"]:focus-visible) label {
+    outline-color: white;
+}
+
+/* Состояние переключателя при включении */
+.switch:has(input[type="checkbox"]:checked) {
+    --switch-clr-bg: var(--switch-clr-bg-on);
+    --switch-delay: 250ms;
+    --toggle-x: calc(100% - var(--toggle-size) - var(--switch-inset));
+    --toggle-bg: var(--toggle-bg-on);
+    --led-animation: toggle var(--led-duration) linear forwards var(--led-delay);
+    --icon-on: 1;
+    --icon-off: 0;
+    --icon-delay: 250ms;
+    --label-scale-off: 0.75;
+    --label-scale-on: 1;
+}
+
+@keyframes toggle {
+    0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80% {
+        background-color: var(--led-color-off);
+    }
+    5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85% {
+        background-color: var(--led-color-loading);
+    }
+    100% {
+        background-color: var(--led-color-on);
+    }
+}
+
+/* ==================== ФУТЕР ==================== */
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  color: #777;
+}
