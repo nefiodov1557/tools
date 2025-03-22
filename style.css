@@ -1501,3 +1501,175 @@ footer {
         gap: 15px;
     }
 }
+
+/* ==================== СЕКЦИЯ 3: ЧЕТВЕРТАЯ ФОРМА АВТОРИЗАЦИИ ==================== */
+/* Стили для четвертой формы */
+.login-3-ring {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-3-ring i {
+    position: absolute;
+    inset: 0;
+    border: 2px solid #fff;
+    transition: 0.5s;
+}
+
+.login-3-ring i:nth-child(1) {
+    border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+    animation: login-3-animate 6s linear infinite;
+}
+
+.login-3-ring i:nth-child(2) {
+    border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+    animation: login-3-animate 4s linear infinite;
+}
+
+.login-3-ring i:nth-child(3) {
+    border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+    animation: login-3-animate2 10s linear infinite;
+}
+
+.login-3-ring i:nth-child(4) {
+    border-radius: 45% 42% 52% 55%/35% 65% 60% 40%;
+    animation: login-3-animate 8s linear infinite;
+}
+
+@keyframes login-3-animate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes login-3-animate2 {
+    0% { transform: rotate(360deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.login-3-login {
+    position: absolute;
+    width: 300px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.login-3-login h2 {
+    font-size: 2em;
+    color: #fff;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.login-3-inputBx {
+    position: relative;
+    width: 100%;
+}
+
+.login-3-inputBx input {
+    position: relative;
+    width: 100%;
+    padding: 12px 20px;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 40px;
+    font-size: 1em;
+    color: #fff;
+    outline: none;
+}
+
+.login-3-inputBx input::placeholder {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.login-3-inputBx input[type="submit"] {
+    background: linear-gradient(45deg, #ff357a, #fff172);
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.5s;
+}
+
+.login-3-inputBx input[type="submit"]:hover {
+    opacity: 0.8;
+    transform: scale(0.98);
+}
+
+.login-3-links {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.login-3-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.login-3-links a:hover {
+    color: #ff357a;
+}
+
+/* Эффекты при наведении */
+.login-3-ring:hover i {
+    border: 6px solid var(--clr);
+    filter: drop-shadow(0 0 20px var(--clr));
+}
+
+/* Адаптивность для четвертой формы */
+@media (max-width: 768px) {
+    .login-3-ring {
+        width: 400px;
+        height: 400px;
+    }
+
+    .login-3-login {
+        width: 250px;
+    }
+
+    .login-3-login h2 {
+        font-size: 1.75em;
+    }
+
+    .login-3-inputBx input {
+        padding: 10px 16px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-3-ring {
+        width: 300px;
+        height: 300px;
+    }
+
+    .login-3-login {
+        width: 200px;
+        gap: 15px;
+    }
+
+    .login-3-login h2 {
+        font-size: 1.5em;
+    }
+
+    .login-3-inputBx input {
+        padding: 8px 14px;
+        font-size: 0.85em;
+    }
+
+    .login-3-links {
+        padding: 0 10px;
+        font-size: 0.9em;
+    }
+}
