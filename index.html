@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="media/favicon.ico">
-    <title>Tools</title>
+    <title>CodeExamples</title>
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
@@ -918,6 +918,179 @@ a:hover {
     .login-2-form {
         gap: 15px;
     }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="example-grid">
+                <div class="form-demo">
+                    <!-- Четвертая форма авторизации -->
+                    <div class="login-3-ring">
+                        <i style="--clr:#00ff0a;"></i>
+                        <i style="--clr:#ff0057;"></i>
+                        <i style="--clr:#fffd44;"></i>
+                        <i style="--clr:#0066ff;"></i>
+                        <div class="login-3-login">
+                            <h2>Login</h2>
+                            <div class="login-3-inputBx">
+                                <input type="text" placeholder="Username">
+                            </div>
+                            <div class="login-3-inputBx">
+                                <input type="password" placeholder="Password">
+                            </div>
+                            <div class="login-3-inputBx">
+                                <input type="submit" value="Sign in">
+                            </div>
+                            <div class="login-3-links">
+                                <a href="#">Forget Password</a>
+                                <a href="#">Signup</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="live-editor">
+                    <div class="editor-tabs">
+                        <div class="tabs-group">
+                            <button class="editor-tab active" data-tab="html">HTML</button>
+                            <button class="editor-tab" data-tab="css">CSS</button>
+                        </div>
+                        <button class="copy-button" data-editor="html-editor-3">
+                            <i class="fa-solid fa-copy"></i>
+                            <span>Копировать</span>
+                        </button>
+                    </div>
+                    <div class="editor-content">
+                        <pre><code id="html-editor-3" class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Animated Login Form&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="login-3-ring"&gt;
+        &lt;i style="--clr:#00ff0a;"&gt;&lt;/i&gt;
+        &lt;i style="--clr:#ff0057;"&gt;&lt;/i&gt;
+        &lt;i style="--clr:#fffd44;"&gt;&lt;/i&gt;
+        &lt;i style="--clr:#0066ff;"&gt;&lt;/i&gt;
+        &lt;div class="login-3-login"&gt;
+            &lt;h2&gt;Login&lt;/h2&gt;
+            &lt;div class="login-3-inputBx"&gt;
+                &lt;input type="text" placeholder="Username"&gt;
+            &lt;/div&gt;
+            &lt;div class="login-3-inputBx"&gt;
+                &lt;input type="password" placeholder="Password"&gt;
+            &lt;/div&gt;
+            &lt;div class="login-3-inputBx"&gt;
+                &lt;input type="submit" value="Sign in"&gt;
+            &lt;/div&gt;
+            &lt;div class="login-3-links"&gt;
+                &lt;a href="#"&gt;Forget Password&lt;/a&gt;
+                &lt;a href="#"&gt;Signup&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        <pre style="display: none;"><code id="css-editor-3" class="language-css">/* Стили для четвертой формы */
+.login-3-ring {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-3-ring i {
+    position: absolute;
+    inset: 0;
+    border: 2px solid #fff;
+    transition: 0.5s;
+}
+
+.login-3-ring i:nth-child(1) {
+    border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+    animation: login-3-animate 6s linear infinite;
+}
+
+.login-3-ring i:nth-child(2) {
+    border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+    animation: login-3-animate 4s linear infinite;
+}
+
+.login-3-ring i:nth-child(3) {
+    border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+    animation: login-3-animate2 10s linear infinite;
+}
+
+@keyframes login-3-animate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes login-3-animate2 {
+    0% { transform: rotate(360deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.login-3-login {
+    position: absolute;
+    width: 300px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.login-3-login h2 {
+    font-size: 2em;
+    color: #fff;
+}
+
+.login-3-inputBx {
+    position: relative;
+    width: 100%;
+}
+
+.login-3-inputBx input {
+    position: relative;
+    width: 100%;
+    padding: 12px 20px;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 40px;
+    color: #fff;
+}
+
+.login-3-inputBx input[type="submit"] {
+    background: linear-gradient(45deg, #ff357a, #fff172);
+    border: none;
+    cursor: pointer;
+}
+
+.login-3-links {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.login-3-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Эффекты при наведении */
+.login-3-ring:hover i {
+    border: 6px solid var(--clr);
+    filter: drop-shadow(0 0 20px var(--clr));
 }</code></pre>
                     </div>
                 </div>
