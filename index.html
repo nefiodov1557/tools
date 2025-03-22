@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="media/favicon.ico">
+    <title>Нефедов Дмитрий - Junior C# Developer</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+
+        </header>
+
+        <section class="section">
+            <div class="example-grid">
+                <div class="form-demo">
+                    <div class="box">
+                        <div class="login">
+                          <div class="loginBx">
+                            <h2>
+                              <i class="fa-solid fa-right-to-bracket"></i>
+                                Login
+                              <i class="fa-solid fa-heart"></i>
+                            </h2>
+                            <input type="text" placeholder="Username">
+                            <input type="password" placeholder="Password">
+                            <input type="submit" value="Sign in" />
+                            <div class="group">
+                              <a href="#">Forgot Password</a>
+                              <a href="#">Sign up</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="live-editor">
+                    <div class="editor-tabs">
+                        <div class="tabs-group">
+                            <button class="editor-tab active" data-tab="html">HTML</button>
+                            <button class="editor-tab" data-tab="css">CSS</button>
+                        </div>
+                        <button class="copy-button" data-editor="html-editor">
+                            <i class="far fa-copy"></i>
+                            <span>Копировать</span>
+                        </button>
+                    </div>
+                    <div class="editor-content">
+                        <pre><code id="html-editor" class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Glowing Animated Login Form&lt;/title&gt;
+  &lt;link rel="stylesheet" href="./style.css"&gt;
+  &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div class="box"&gt;
+  &lt;div class="login"&gt;
+    &lt;div class="loginBx"&gt;
+      &lt;h2&gt;
+        &lt;i class="fa-solid fa-right-to-bracket"&gt;&lt;/i&gt;
+          Login
+        &lt;i class="fa-solid fa-heart"&gt;&lt;/i&gt;
+      &lt;/h2&gt;
+      &lt;input type="text" placeholder="Username"&gt;
+      &lt;input type="password" placeholder="Password"&gt;
+      &lt;input type="submit" value="Sign in" /&gt;
+      &lt;div class="group"&gt;
+        &lt;a href="#"&gt;Forgot Password&lt;/a&gt;
+        &lt;a href="#"&gt;Sign up&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+  
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        <pre style="display: none;"><code id="css-editor" class="language-css">@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #252432;
+}
+
+@property --a {
+  syntax: "&lt;angle&gt;";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.box {
+  position: relative;
+  width: 400px;
+  height: 200px;
+  background: repeating-conic-gradient(
+    from var(--a),
+    #ff2770 0%,
+    #ff2770 5%,
+    transparent 5%,
+    transparent 40%,
+    #ff2770 50%
+  );
+  filter: drop-shadow(0 15px 50px #000);
+  animation: rotating 4s linear infinite;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+
+.box:hover {
+  width: 450px;
+  height: 500px;
+}
+
+@keyframes rotating {
+  0% {
+    --a: 0deg;
+  }
+  100% {
+    --a: 360deg;
+  }
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: repeating-conic-gradient(
+    from var(--a),
+    #45f3ff 0%,
+    #45f3ff 5%,
+    transparent 5%,
+    transparent 40%,
+    #45f3ff 50%
+  );
+  filter: drop-shadow(0 15px 50px #000);
+  border-radius: 20px;
+  animation: rotating 4s linear infinite;
+  animation-delay: -1s;
+}
+
+.box::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  background: #2d2d39;
+  border-radius: 15px;
+  border: 8px solid #25252b;
+}
+
+.login {
+  position: absolute;
+  inset: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  box-shadow: inset 0 10px 20px rgba(0, 0, 0, 0.5);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  transition: 0.5s;
+  color: #fff;
+  overflow: hidden;
+}
+
+.box:hover .login {
+  inset: 40px;
+}
+
+.loginBx {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transform: translateY(126px);
+  gap: 20px;
+  width: 70%;
+  transition: 0.5s;
+}
+
+.box:hover .loginBx {
+  transform: translateY(0px);
+}
+
+.loginBx h2 {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+}
+
+.loginBx h2 i {
+  color: #ff2770;
+  text-shadow: 0 0 5px #ff2770, 0 0 30px #ff2770;
+}
+
+.loginBx input {
+  width: 100%;
+  padding: 10px 20px;
+  outline: none;
+  font-size: 1em;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.1);
+  border: 2px solid #fff;
+  border-radius: 30px;
+}
+
+.loginBx input::placeholder {
+  color: #999;
+}
+
+.loginBx input[type="submit"] {
+  background: #45f3ff;
+  border: none;
+  font-weight: 500;
+  color: #111;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.loginBx input[type="submit"]:hover {
+  box-shadow: 0 0 10px #45f3ff, 0 0 60px #45f3ff;
+}
+
+.group {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.group a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.group a:nth-child(2) {
+  color: #ff2770;
+  font-weight: 600;
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="example-grid">
+                <div class="form-demo">
+                    <!-- Вторая форма авторизации -->
+                    <div class="login-1_wrapper">
+                        <div class="login-1_box">
+                            <div class="login-1_header">
+                                <span>Login</span>
+                            </div>
+
+                            <div class="login-1_input_box">
+                                <input type="text" id="login-1_user" class="login-1_input-field" required>
+                                <label for="login-1_user" class="login-1_label">Username</label>
+                                <i class="bx bx-user login-1_icon"></i>
+                            </div>
+
+                            <div class="login-1_input_box">
+                                <input type="password" id="login-1_pass" class="login-1_input-field" required>
+                                <label for="login-1_pass" class="login-1_label">Password</label>
+                                <i class="bx bx-lock-alt login-1_icon"></i>
+                            </div>
+
+                            <div class="login-1_remember-forgot">
+                                <div class="login-1_remember-me">
+                                    <input type="checkbox" id="login-1_remember">
+                                    <label for="login-1_remember">Remember me</label>
+                                </div>
+                                <div class="login-1_forgot">
+                                    <a href="#">Forgot password?</a>
+                                </div>
+                            </div>
+
+                            <div class="login-1_input_box">
+                                <input type="submit" class="login-1_input-submit" value="Login">
+                            </div>
+
+                            <div class="login-1_register">
+                                <span>Don't have an account? <a href="#">Register</a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="live-editor">
+                    <div class="editor-tabs">
+                        <div class="tabs-group">
+                            <button class="editor-tab active" data-tab="html">HTML</button>
+                            <button class="editor-tab" data-tab="css">CSS</button>
+                        </div>
+                        <button class="copy-button" data-editor="html-editor-1">
+                            <i class="far fa-copy"></i>
+                            <span>Копировать</span>
+                        </button>
+                    </div>
+                    <div class="editor-content">
+                        <pre><code id="html-editor-1" class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="en" &gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Modern Login Form | CodingStella &lt;/title&gt;
+  &lt;link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'&gt;
+&lt;link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Poppins&amp;display=swap'&gt;&lt;link rel="stylesheet" href="./style.css"&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+&lt;!-- partial:index.partial.html --&gt;
+&lt;div class="wrapper"&gt;
+  &lt;div class="login_box"&gt;
+    &lt;div class="login-header"&gt;
+      &lt;span&gt;Login&lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;div class="input_box"&gt;
+      &lt;input type="text" id="user" class="input-field" required&gt;
+      &lt;label for="user" class="label"&gt;Username&lt;/label&gt;
+      &lt;i class="bx bx-user icon"&gt;&lt;/i&gt;
+    &lt;/div&gt;
+
+    &lt;div class="input_box"&gt;
+      &lt;input type="password" id="pass" class="input-field" required&gt;
+      &lt;label for="pass" class="label"&gt;Password&lt;/label&gt;
+      &lt;i class="bx bx-lock-alt icon"&gt;&lt;/i&gt;
+    &lt;/div&gt;
+
+    &lt;div class="remember-forgot"&gt;
+      &lt;div class="remember-me"&gt;
+        &lt;input type="checkbox" id="remember"&gt;
+        &lt;label for="remember"&gt;Remember me&lt;/label&gt;
+      &lt;/div&gt;
+
+      &lt;div class="forgot"&gt;
+        &lt;a href="#"&gt;Forgot password?&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class="input_box"&gt;
+      &lt;input type="submit" class="input-submit" value="Login"&gt;
+    &lt;/div&gt;
+
+    &lt;div class="register"&gt;
+      &lt;span&gt;Don't have an account? &lt;a href="#"&gt;Register&lt;/a&gt;&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- partial --&gt;
+  
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        <pre style="display: none;"><code id="css-editor-1" class="language-css">* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --primary-color: #c6c3c3;
+  --second-color: #ffffff;
+  --black-color: #000000;
+}
+
+body {
+  background-image: url("https://codingstella.com/wp-content/uploads/2024/01/download-6-scaled.jpeg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+a {
+  text-decoration: none;
+  color: var(--second-color);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.login_box {
+  position: relative;
+  width: 450px;
+  backdrop-filter: blur(25px);
+  border: 2px solid var(--primary-color);
+  border-radius: 15px;
+  padding: 7.5em 2.5em 4em 2.5em;
+  color: var(--second-color);
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+}
+
+.login-header {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
+  width: 140px;
+  height: 70px;
+  border-radius: 0 0 20px 20px;
+}
+
+.login-header span {
+  font-size: 30px;
+  color: var(--black-color);
+}
+
+.login-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -30px;
+  width: 30px;
+  height: 30px;
+  border-top-right-radius: 50%;
+  background: transparent;
+  box-shadow: 15px 0 0 0 var(--primary-color);
+}
+
+.login-header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -30px;
+  width: 30px;
+  height: 30px;
+  border-top-left-radius: 50%;
+  background: transparent;
+  box-shadow: -15px 0 0 0 var(--primary-color);
+}
+
+.input_box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+}
+
+.input-field {
+  width: 100%;
+  height: 55px;
+  font-size: 16px;
+  background: transparent;
+  color: var(--second-color);
+  padding-inline: 20px 50px;
+  border: 2px solid var(--primary-color);
+  border-radius: 30px;
+  outline: none;
+}
+
+#user {
+  margin-bottom: 10px;
+}
+
+.label {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  transition: 0.2s;
+}
+
+.input-field:focus ~ .label,
+.input-field:valid .label {
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  font-size: 14px;
+  background-color: var(--primary-color);
+  border-radius: 30px;
+  color: var(--black-color);
+  padding: 0 10px;
+}
+
+.icon {
+  position: absolute;
+  top: 18px;
+  right: 25px;
+  font-size: 20px;
+}
+
+.remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+}
+
+.input-submit {
+  width: 100%;
+  height: 50px;
+  background: #ececec;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.input-submit:hover {
+  background: var(--second-color);
+}
+
+.register {
+  text-align: center;
+}
+
+.register a {
+  font-weight: 500;
+}
+
+@media only screen and (max-width: 564px) {
+  .wrapper {
+    padding: 20px;
+  }
+
+  .login_box {
+    padding: 7.5em 1.5em 4em 1.5em;
+  }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            здесь будет окно авторизации 2
+        </section>
+
+        
+        <section class="section">
+            
+        </section>
+
+
+        <section class="section">
+            
+        </section>
+
+
+        <section class="section">
+                
+        </section>
+
+        
+        <section class="section">
+            
+        </section>
+
+        
+        <section class="section">
+            
+        </section>
+
+        
+        
+    </div>
+
+    <footer>
+        <p>2025 © Дмитрий Нефедов. Все права защищены.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-css.min.js"></script>
+</body>
+</html>
