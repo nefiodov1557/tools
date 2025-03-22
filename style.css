@@ -526,32 +526,64 @@ h2 {
 
 /* Кнопка копирования */
 .copy-button {
-    padding: 6px 16px;
-    background: rgba(255, 255, 255, 0.1);
+    padding: 8px 12px;
+    background: rgba(128, 128, 128, 0.1);
     border: none;
-    color: #888;
-    cursor: pointer;
     border-radius: 6px;
+    color: var(--text);
+    cursor: pointer;
     transition: 0.3s;
     display: flex;
     align-items: center;
-    gap: 6px;
-    font-size: 0.85em;
-    backdrop-filter: blur(5px);
+    gap: 8px;
+    opacity: 0.85;
 }
 
 .copy-button:hover {
-    background: rgba(255, 255, 255, 0.15);
-    color: #fff;
-}
-
-.copy-button.copied {
-    background: #4CAF50;
-    color: #fff;
+    background: rgba(128, 128, 128, 0.2);
+    opacity: 1;
 }
 
 .copy-button i {
-    font-size: 1em;
+    font-size: 1.2em;
+    display: inline-block;
+}
+
+.copy-button span {
+    display: inline-block;
+}
+
+.copy-button.copied {
+    color: #4CAF50;
+}
+
+:root[data-theme="light"] .copy-button {
+    color: var(--text);
+    background: rgba(0, 0, 0, 0.05);
+}
+
+:root[data-theme="light"] .copy-button:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+:root[data-theme="light"] .copy-button.copied {
+    color: #4CAF50;
+}
+
+@media (max-width: 768px) {
+    .copy-button {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .copy-button span {
+        display: none;
+    }
+
+    .copy-button i {
+        margin: 0;
+    }
 }
 
 /* Стили для скроллбара в редакторе */
